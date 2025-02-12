@@ -65,3 +65,20 @@ while True:
 
     else:
         print("\nLet's start over!\n")
+
+        # Calculating total price
+subtotal = menu[meal_choice]["price"] * quantity
+
+# Checking if the customer is a student and loop until user enters y or n
+# Apply student discount if the user is a student
+student_discount = 0
+is_student = input("Are you a student? (y/n): ").strip().lower()
+while is_student not in ["y", "n"]:
+    is_student = input("Invalid input. Please enter 'y' or 'n': ").strip().lower()
+
+if is_student == "y":
+    student_discount = subtotal * 0.10
+
+# Adding tax
+tax = (subtotal - student_discount) * 0.13
+total = subtotal - student_discount + tax
