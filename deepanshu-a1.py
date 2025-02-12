@@ -82,3 +82,28 @@ if is_student == "y":
 # Adding tax
 tax = (subtotal - student_discount) * 0.13
 total = subtotal - student_discount + tax
+
+#Printing the receipt
+print("\n" + "=" * 50)
+print(" Arnold's Amazing Eats - Order Receipt ")
+print("=" * 50)
+print(f"Customer: {first_name} {last_name}")
+print(f"Address: {address}")
+print(f"City: {city}, {province}, {postal_code}")
+print(f"Phone: {phone_number}")
+print(f"Delivery Instructions: {delivery_instructions}")
+print(" " * 50)
+
+print(f"Order                    Item Amt   Item Price    Total")
+print("------------            ----------  ------------  ----------")
+print(f"{menu[meal_choice]['name']:15}    {quantity:3}        ${menu[meal_choice]['price']:6.2f}      ${subtotal:6.2f}")
+
+if student_discount > 0:
+    print(f"10% Student Savings:                            -${student_discount:6.2f}")
+
+print(f"                                    Subtotal:    ${subtotal - student_discount:6.2f}")
+print(f"                                    Tax (13%):   ${tax:6.2f}")
+print("                                               ------------")
+print(f"                                    TOTAL:       ${total:6.2f}")
+print("=" * 60)
+print("Thank you for ordering with Arnold's Amazing Eats!")
