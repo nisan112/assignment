@@ -26,3 +26,27 @@ while True:
     print(" ")
     print("Thank you for providing your information.")
     print("=" * 50)
+
+    # Displaying the menu
+    print("Here is our menu for today:")
+    print("-" * 50)
+
+#storing menu as dictionary key-value pairs
+    menu = {
+        "1": {"name": "Spaghetti Carbonara", "price": 12.99},
+        "2": {"name": "Grilled Chicken Wings", "price": 14.99}
+    }
+  
+
+    print("\nMenu:")
+#displaying items from menu dictionary using for loop
+    for key, item in menu.items():
+        print(f"{key}) {item['name']} - ${item['price']:.2f}")
+
+# Taking user selection and loop until user selects 1 or 2
+    meal_choice = input("Select a meal (1 or 2): ")
+    while meal_choice not in menu:
+        meal_choice = input("Invalid choice! Please select 1 or 2: ")
+
+# Taking user input for quantity
+    quantity = int(input("Enter quantity: "))
