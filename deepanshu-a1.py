@@ -50,3 +50,18 @@ while True:
 
 # Taking user input for quantity
     quantity = int(input("Enter quantity: "))
+
+    # Order confirmation and loop until user confirms
+    print("\nOrder Summary:")
+    print(f"Meal: {menu[meal_choice]['name']}")
+    print(f"Quantity: {quantity}")
+
+    confirm = input("Confirm Order? (y/n): ").strip().lower()
+    while confirm not in ["y", "n"]:
+        confirm = input("Invalid input. Please enter 'y' or 'n': ").strip().lower()
+
+    if confirm == "y":
+        break
+
+    else:
+        print("\nLet's start over!\n")
